@@ -3,14 +3,14 @@ Contributors: James Fleeting
 Donate link: http://paperkilledrock.com/projects
 Tags: admin, theme, branding, logo
 Requires at least: 2.7
-Tested up to: 2.8.3
+Tested up to: 2.8.4
 Stable tag: 0.1
 
-Allows you to remove and/or replace WordPress mentions and logos in the Admin Area. This does NOT let you theme wp-admin but simply lets you replace the logo with your own. Perfect for clients or sites that lets users register but don't want the WordPress logo on wp-login.php.
+Allows you to remove and/or replace WordPress mentions and logos in the Admin Area. This does NOT let you theme wp-admin but simply lets you replace the logo with your own. Perfect for clients or sites that lets users register but don't want the WordPress logo.
 
 == Description ==
 
-Allows you to remove and/or replace WordPress mentions and logos in the Admin Area. This does NOT let you theme wp-admin but simply lets you replace the logo with your own. Perfect for clients or sites that lets users register but don't want the WordPress logo on wp-login.php.
+Allows you to remove and/or replace WordPress mentions and logos in the Admin Area. This does NOT let you theme wp-admin but simply lets you replace the logo with your own. Perfect for clients or sites that lets users register but don't want the WordPress logo.
 
 == Installation ==
 
@@ -18,7 +18,7 @@ Installing WP-TwitterSearch is as easy as any other plugin.
 
 1. Upload `WP-AdminBranding` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. See the Branding menu for options.
+1. Options page is found under Settings.
 
 == Frequently Asked Questions ==
 
