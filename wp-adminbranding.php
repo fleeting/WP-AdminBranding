@@ -53,6 +53,8 @@ class WPAdminBranding {
     add_option('hide_login_branding', '');
     add_option('hide_wp_updatenotice', '');
     add_option('hide_plugin_updatenotice', '');
+    add_option('wpab_small_logo', '');
+    add_option('wpab_large_logo', '');
   }
   
   //on plugin deactivation delete options from db
@@ -62,6 +64,8 @@ class WPAdminBranding {
     delete_option('hide_login_branding', '');
     delete_option('hide_wp_updatenotice', '');
     delete_option('hide_plugin_updatenotice', '');
+    delete_option('wpab_small_logo', '');
+    delete_option('wpab_large_logo', '');
   }
   
   //create menu items
@@ -116,16 +120,26 @@ class WPAdminBranding {
                   
                   <label for="hide_plugin_updatenotice">
                     <input name="hide_plugin_updatenotice" type="checkbox" id="hide_plugin_updatenotice" value="1" <?php if (get_option('hide_plugin_updatenotice') == '1') { echo 'checked="checked"'; } ?> /> <strong>*</strong> The notice that a plugin needs updating.
-                  </label><br />
+                  </label><br />                  
                 </fieldset>
                 
                 <p style="font-size:10px;">* Will continue to show for Admins only, hides it from all other users.</p>
               </td>
             </tr>
+            
+            <tr valign="top">
+              <th scope="row">Small Logo (65 x 66px) [not implemented]</th>
+              <td><input disabled="disabled" type="text" name="wpab_small_logo" value="<?php echo get_option('wpab_small_logo'); ?>" /></td>
+            </tr>
+            
+            <tr valign="top">
+              <th scope="row">Full Size Logo (310 x 70px) [not implemented]</th>
+              <td><input disabled="disabled" type="text" name="wpab_large_logo" value="<?php echo get_option('wpab_large_logo'); ?>" /></td>
+            </tr>
           </table>
 
           <input type="hidden" name="action" value="update" />
-          <input type="hidden" name="page_options" value="hide_header_branding,hide_footer_branding,hide_login_branding,hide_wp_updatenotice,hide_plugin_updatenotice" />
+          <input type="hidden" name="page_options" value="hide_header_branding,hide_footer_branding,wpab_small_logo,wpab_large_logo,hide_login_branding,hide_wp_updatenotice,hide_plugin_updatenotice" />
 
           <p class="submit">
             <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
@@ -168,7 +182,11 @@ class WPAdminBranding {
       /* WP-AdminBranding Over-ride CSS */
       <?php if (get_option('hide_login_branding') == 1) { ?>
         #login h1 {display: none;}
-        #login h1 a {background: none; text-indent: 0; text-align: center; text-decoration:none;}
+        <?php if (get_option('wpab_large_logo')) { ?>
+          #login h1 a {background: <?php echo get_option('wpab_large_logo'); ?>;text-indent: 0; text-align: center; text-decoration:none;}
+        <?php } else { ?>
+          #login h1 a {background: none;text-indent: 0; text-align: center; text-decoration:none;}
+        <?php } ?>
       <?php } ?>
     </style>
   <?php } //wp_adminbranding
