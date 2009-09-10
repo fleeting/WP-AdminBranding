@@ -183,7 +183,11 @@ class WPAdminBranding {
       <?php if (get_option('hide_login_branding') == 1) { ?>
         #login h1 {display: none;}
         <?php if (get_option('wpab_large_logo')) { ?>
-          #login h1 a {background: <?php echo get_option('wpab_large_logo'); ?>;text-indent: 0; text-align: center; text-decoration:none;}
+          #login h1 a {
+            background: none;
+            text-indent: 0; 
+            text-align: center; 
+            text-decoration:none;}
         <?php } else { ?>
           #login h1 a {background: none;text-indent: 0; text-align: center; text-decoration:none;}
         <?php } ?>
